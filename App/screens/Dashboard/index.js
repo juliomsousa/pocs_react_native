@@ -1,26 +1,35 @@
 import React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import {TouchableOpacity, StyleSheet, Text, Button, View} from 'react-native';
+import {HeaderNavigationBar} from '../../components';
 
 // import { Container } from './styles';
 
-const Dashboard = () => {
+function Dashboard({navigation}) {
   return (
-    <View style={styles.container}>
-      <View style={styles.card}>
-        <Text>\0/</Text>
+    <>
+      {/* <HeaderNavigationBar navigation={navigation} /> */}
+      <View style={styles.container}>
+        <TouchableOpacity
+          style={styles.card}
+          onPress={() => navigation.navigate('Profile')}>
+          <Text>Go to Profile</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.card}
+          onPress={() => navigation.navigate('Settings')}>
+          <Text>Go to Settings</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.card}>
+          <Text>\0/</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.card}>
+          <Text>\0/</Text>
+        </TouchableOpacity>
+        <Button title="Go back" onPress={() => navigation.goBack()} />
       </View>
-      <View style={styles.card}>
-        <Text>\0/</Text>
-      </View>
-      <View style={styles.card}>
-        <Text>\0/</Text>
-      </View>
-      <View style={styles.card}>
-        <Text>\0/</Text>
-      </View>
-    </View>
+    </>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -36,6 +45,8 @@ const styles = StyleSheet.create({
     margin: 10,
     height: 100,
     width: '40%',
+    alignItems: 'center',
+    justifyContent: 'center',
     borderWidth: 1,
     backgroundColor: '#FFF',
   },

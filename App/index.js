@@ -1,10 +1,6 @@
 import React from 'react';
-import Login from './screens/Login';
-import Dashboard from './screens/Dashboard';
+import AppNavigation from './navigation';
 
-function App() {
-  // return <Dashboard />;
-  return <Login />;
+export default function App() {
+  return <AppNavigation />;
 }
-
-export default App;

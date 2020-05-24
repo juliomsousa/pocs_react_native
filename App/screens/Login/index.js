@@ -9,17 +9,19 @@ import {
 
 // import { Container } from './styles';
 
-const Login = () => {
+function Login({navigation}) {
   return (
     <View style={styles.container}>
       <TextInput style={styles.textInput} placeholder="Username" />
       <TextInput style={styles.textInput} placeholder="Password" />
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate('Dashboard')}>
         <Text>Login</Text>
       </TouchableOpacity>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
